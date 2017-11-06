@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-info">
+            <div class="panel-heading">Import file</div>
+            <div class="panel-body">
+                <div class="input-group mrgn20B">
+                    <span class="btn btn-default form-control">
+                        <input type="file" id="file" name="file" />
+                    </span>
+                    <span class="input-group-btn">
+                        <button id="btn-upload" class="btn btn-info" data-url="@Url.Action("Calculate")">Calculate</button>
+                    </span>
+                </div>
+
+                <div class="text-center">
+                    <span id="spinner" class="spinner" style="display: none">
+                        <img id="img-spinner" src="~/img/ajax-loader.gif" alt="Loading" />
+                        Calculating..
+                    </span>
+                </div>
+
+                <div class="alert alert-danger error-message mrgn20B" style="display: none;">
+                    <p></p>
+                </div>
+
+                <div class="calculation-section" style="display: none;">
+                    <div class="panel panel-success text-center">
+                        <div class="panel-heading">
+                            <h3>Calculation Result</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h1 class="result"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        
+        <div class="panel panel-info">
+            <div class="panel-heading">Example valid file formats</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4 info-border-right">
+                        <ul class="list-unstyled">
+                            <li>add 2</li>
+                            <li>multiply 3</li>
+                            <li>apply 3</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 info-border-right">
+                        <ul class="list-unstyled">
+                            <li>add 2</li>
+                            <li>apply 3</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="list-unstyled">
+                            <li>apply 3</li>
+                        </ul>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="panel panel-danger">
+            <div class="panel-heading">Example invalid file format</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4 danger-border-right">
+                    <ul class="list-unstyled">
+                        <li>plus 2 (incorrent)</li>
+                        <li>multiply 3</li>
+                        <li>apply 3</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 danger-border-right">
+                    <ul class="list-unstyled">
+                        <li>add 2 b (incorrent)</li>
+                        <li>apply 3</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <ul class="list-unstyled">
+                        <li>apply (incorrent)</li>
+                    </ul>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Calculator/home/home-index.js")?v=1.0"></script>
+}
