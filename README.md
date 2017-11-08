@@ -15,4 +15,5 @@ apply 3
 
 Result: 15
 
-The number that next to apply instruction is initial value which is 3 in above example. Then, it starts to calculate from start to end. There is no precedence.  
+
+Each line has one instruction and one number and there is a space between them (ex: add 2). The number that next to apply instruction is initial value which is 3 in above example. Then, it starts to calculate from start to end. There is no precedence.  
