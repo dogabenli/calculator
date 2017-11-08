@@ -10,7 +10,9 @@ Requirements:
 Example format:
 
 add 2
+
 multiply 3
+
 apply 3
 
 Result: 15
